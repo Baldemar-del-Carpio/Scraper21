@@ -95,13 +95,12 @@ class ObtenerLinks: # Clase que obtiene todos los links de las propiedades del s
 					'Tamaulipas',
 					'Tlaxcala',
 					'Veracruz',
-					'Yucatan',
-					'Zacatecas',
+					'Yucatan'
 				]
-		numeros=[self.obtener_numero_elementos(estados[posicion]) for posicion in range(32)]
+		numeros=[self.obtener_numero_elementos(estados[posicion]) for posicion in range(len(estados))]
 		numeros=list(map(int, numeros))
 		paginas = [ceil(numero/21) for numero in numeros]
-		listas = ['https://century21mexico.com/{}?pagina={}'.format(estados[posicion],paginador) for posicion in range(32) for paginador in range(1,paginas[posicion]+1)]
+		listas = ['https://century21mexico.com/{}?pagina={}'.format(estados[posicion],paginador) for posicion in range(len(estados)) for paginador in range(1,paginas[posicion]+1)]
 		return listas
 
 	def obtener_21_urls(self,posicion):
