@@ -11,7 +11,7 @@ import re
 from re import sub
 from math import ceil
 from datetime import datetime
-from money_parser import price_str
+
 
 # Sección que corresponde a los decoradores.
 
